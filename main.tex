@@ -1,0 +1,302 @@
+% !TeX program  = XeLaTeX
+% !TeX encoding = UTF-8
+
+% \documentclass[type=master]{YNUthesis} % 硕士学位
+\documentclass[type=doctor]{YNUthesis} % 博士学位
+% 根据需求自行导入各种包，这里仅包含演示示例的包
+% 将云南大学logo自行替换
+\usepackage{YNUlogo}
+\usepackage{booktabs}
+\usepackage{graphicx}
+% 为了方便插入图片，将图片目录路径转为根路径
+\graphicspath{{Figures/}}
+
+\YNUsetup{
+  % 参数设置
+  % 允许采用两种方式设置选项：
+  %   1. style/... = ...
+  %   2. style = { ... = ... }
+  % 注意事项：
+  %   1. 不要出现空行
+  %   2. “=” 两侧的空格会被忽略
+  %   3. “/” 两侧的空格不会被忽略
+  %   4. 请使用英文逗号 “,” 分隔选项
+  %
+  % style 类用于设置论文格式
+  style = {
+    font = times,
+    % 西文字体（包括数学字体）
+    % 允许选项：
+    %   font = garamond|libertinus|lm|palatino|times|times*|none
+    %
+    cjk-font = windows,
+    % 中文字体
+    % 允许选项：
+    %   cjk-font = adobe|fandol|founder|mac|sinotype|sourcehan|windows|none
+    %
+    % 注意：
+    %   1. 中文字体设置高度依赖于系统。各系统建议方案：
+    %        windows：cjk-font = windows
+    %        mac：    cjk-font = mac
+    %        linux：  cjk-font = fandol（默认值）
+    %   2. 除 fandol 和 sourcehan 外，其余字体均为商用字体，请注意版权问题
+    %   3. 但 fandol 字体缺字比较严重，而 sourcehan 没有配备楷体和仿宋体
+    %   4. 这里中西文字体设置均注释掉了，即使用默认设置：
+    %        font     = times
+    %        cjk-font = fandol
+    %   5. 使用 font = none / cjk-font = none 关闭默认字体设置，需手动进行配置
+    %
+    font-size = -4,
+    % 字号
+    % 允许选项：
+    %   font-size = -4|5
+    %
+    % fullwidth-stop = catcode,
+    % 是否把全角实心句点 “．” 作为默认的句号形状
+    % 允许选项：
+    %   fullwidth-stop = catcode|mapping|false
+    % 说明：
+    %   catcode   显式的 “。” 会被替换为 “．”（e.g. 不包括用宏定义保存的 “。”）
+    %   mapping   所有的 “。” 会被替换为 “．”（使用 LuaLaTeX 编译则无效）
+    %   false     不进行替换
+    %
+    footnote-style = plain,
+    % 脚注编号样式
+    % 允许选项：
+    %   footnote-style = plain|libertinus|libertinus*|libertinus-sans|
+    %                    pifont|pifont*|pifont-sans|pifont-sans*|
+    %                    xits|xits-sans|xits-sans*
+    % 默认与西文字体保持一致
+    %
+    hyperlink = color,
+    % 超链接样式
+    % 允许选项：
+    %   hyperlink = border|color|none
+    %
+    hyperlink-color = prl,
+    % 超链接颜色
+    % 允许选项：
+    %   hyperlink-color = default|classic|material|graylevel|prl
+    %
+    bib-backend = bibtex,
+    % 参考文献支持方式
+    % 允许选项：
+    %   bib-backend = bibtex|biblatex
+    %
+    % bib-style = numerical,
+    % 参考文献样式
+    % 允许选项：
+    %   bib-style = author-year|numerical|<其他样式>
+    % 说明：
+    %   author-year  著者—出版年制
+    %   numerical    顺序编码制
+    %   <其他样式>   使用其他 .bst（bibtex）或 .bbx（biblatex）格式文件
+    %
+    % cite-style = {},
+    % 引用样式
+    % 默认为空，即与参考文献样式保持一致
+    % 仅适用于 biblatex；如要填写，需保证相应的 .cbx 格式文件能被调用
+    %
+    bib-resource = {main.bib},
+    % 参考文献数据源
+    % 可以是单个文件，也可以是用英文逗号 “,” 隔开的一组文件
+    % 如果使用 biblatex，则必须明确给出 .bib 后缀名
+    %
+    % auto-make-cover = true
+    % 是否自动生成论文封面（封一）、指导小组成员名单（封二）和声明页（封三）
+    % 除非特殊需要（e.g. 不要封面），否则不建议设为 false
+  },
+  %
+  % info 类用于录入论文信息
+  info = {
+    title = {基于XXX的XXX研究
+},
+    % 中文标题
+    % 长标题建议使用 “\\” 命令手动换行（不是指在源文件里输入回车符，当然
+    % 源文件里适当的换行可以有助于代码清晰）：
+    %   title = {最高人民法院、最高人民检察院关于适用\\
+    %            犯罪嫌疑人、被告人逃匿、死亡案件违法所得\\
+    %            没收程序若干问题的规定},
+    %
+    title* = {Research on XXXX Based on XXXX},
+    % 英文标题
+    %
+    author = {XXX},
+    % 作者姓名
+    %
+    % author* = {Your name},
+    % 作者姓名（英文 / 拼音）
+    % 目前不需要填写
+    %
+    supervisor = {
+      XXX,教授,
+    },
+    % 导师
+    % 姓名与职称之间可以用 \quad 打印一个空格
+    %
+    major = {XXX},
+    % 专业
+    major_professional = {XXXX},
+    % 研究方向
+    %
+    degree = academic,
+    % 学位类型
+    % 允许选项：
+    %   degree = academic|professional
+    % 说明：
+    %   academic      学术学位
+    %   professional  专业学位
+    %
+    department = {XXXX},
+    % 院系
+    %
+    student-id = {XXXX},
+    % 作者学号
+    %
+    % date = {2021 年 1 月 1 日},
+    % 日期
+    % 注释掉表示使用编译日期
+    %
+    % secret-level = iv,
+    % 密级
+    % 允许选项：
+    %   secret-level = none|i|ii|iii|iv
+    % 说明：
+    %   none  公开(默认)
+    %   i     内部
+    %   ii    秘密
+    %   iii   机密
+    %   iv    绝密
+    %
+    % secret-year = {五年},
+    % 保密年限
+    % secret-level = none 时该选项无效
+    %
+    pre-review = {
+      同意送审,
+      XXX,教授,校内,
+    },
+    pre-defense = {
+      优秀,
+      XXX,教授,校内,
+    },
+    submission = {
+      盲审1,教授,校内,良好,
+    },
+    defense = {
+      良好,
+      XXX,教授,校内,
+    },
+    %学位申请简况表
+    %
+    keywords = {XX, XX, XX},
+    % 中文关键字
+    % 使用英文逗号 “,” 分隔
+    %
+    keywords* = {XX, XX, XX},
+    % 英文关键字
+    % 使用英文逗号 “,” 分隔
+    %
+    clc = {O413.1},
+    % 中图分类号
+    %
+    % jel = {C02},
+    % JEL 分类号，仅适用于经济学院等部分院系
+  }
+}
+
+\begin{document}
+
+% 这个命令用来关闭版心底部强制对齐，可以减少不必要的 underfull \vbox 提示，但会影响排版效果
+\raggedbottom
+
+% 前置部分包含目录、中英文摘要以及符号表等
+\frontmatter
+
+\begin{abstract}
+	中文摘要
+\end{abstract}
+
+\begin{abstract*}
+	English abstract
+\end{abstract*}
+
+% 目录
+\tableofcontents
+% 插图目录
+\listoffigures
+% 表格目录
+\listoftables
+
+% 符号表
+% 语法与 LaTeX 表格一致：列用 & 区分，行用 \\ 区分
+% 如需修改格式，可以使用可选参数：
+%   \begin{notation}[ll]
+%     $x$ & 坐标 \\
+%     $p$ & 动量
+%   \end{notation}
+% 可选参数与 LaTeX 标准表格的列格式说明语法一致
+% 这里的 “ll” 表示两列均为自动宽度，并且左对齐
+\begin{notation}[ll]
+	$x$                  & 坐标        \\
+	$p$                  & 动量        \\
+\end{notation}
+
+% 主体部分是论文的核心
+\mainmatter
+
+% 建议采用多文件编译的方式
+% 比较好的做法是把每一章放进一个单独的 tex 文件里，并在这里用 \include 导入，例如
+
+
+\chapter{介绍}
+XXXX\footnote{w}\cite{YDTR}
+
+\[
+	a^2+b^2=c^2
+\]
+
+XXXX
+
+\begin{equation}
+	a^2+b^2=c^2
+\end{equation}
+
+XXXX
+
+\section{动力学演化}
+XXXX
+
+\subsection{动力学演化}
+XXXX
+
+\begin{figure*}[t]
+\label{fig_1}
+    \centering
+    \includegraphics[width=\linewidth]{Fig_Sample.pdf}
+    \caption{The sample figure.}
+\end{figure*}
+
+\subsubsection{动力学演化}
+XXXX
+
+\chapter{总结与展望}
+XXXX
+
+\appendix
+\chapter{附录}
+XXXX
+
+% 后置部分包含参考文献、声明页（自动生成）等
+\backmatter
+
+% 打印参考文献列表
+\printbibliography
+
+\chapter{攻读XX期间完成的科研成果}
+XXXX
+
+\chapter{致谢}
+XXXX
+
+\end{document}
