@@ -1,0 +1,151 @@
+{
+    // latex 配置
+    // "latex-workshop.view.pdf.viewer": "browser",
+    // "latex-workshop.view.pdf.ref.viewer": "auto",
+    // "latex-workshop.view.pdf.external.viewer.args": [
+    //     "%PDF%"
+    // ],
+    "latex-workshop.latex.tools": [
+        {
+            "name": "xelatex-latexmk",
+            "command": "latexmk",
+            "args": [
+                "-f",
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-xelatex",
+                "-outdir=%OUTDIR%",
+                "%DOC%"
+            ]
+        },
+        {
+            "name": "pdflatex-latexmk",
+            "command": "latexmk",
+            "args": [
+                "-f",
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-pdf",
+                "-outdir=%OUTDIR%",
+                "%DOC%"
+            ]
+        },
+        {
+            "name": "xelatex-latexmk-with-shell-escape",
+            "command": "latexmk",
+            "args": [
+                "-f",
+                "--shell-escape",
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-xelatex",
+                "-outdir=%OUTDIR%",
+                "%DOC%"
+            ]
+        },
+        {
+            "name": "pdflatex-latexmk-with-shell-escape",
+            "command": "latexmk",
+            "args": [
+                "-f",
+                "--shell-escape",
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-pdf",
+                "-outdir=%OUTDIR%",
+                "%DOC%"
+            ]
+        },
+        {
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": [
+                "-f",
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-pdf",
+                "%DOC%"
+            ]
+        },
+        {
+            "name": "bibtex",
+            "command": "bibtex",
+            "args": [
+                "%DOCFILE%"
+            ]
+        },
+    ],
+    // 用于配置编译链
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "xelatex-latexmk",
+            "tools": [
+                "xelatex-latexmk"
+            ]
+        },
+        {
+            "name": "latexmk",
+            "tools": [
+                "latexmk"
+            ]
+        },
+        {
+            "name": "pdflatex-latexmk",
+            "tools": [
+                "pdflatex-latexmk"
+            ]
+        },
+        {
+            "name": "xelatex-latexmk-with-shell-escape",
+            "tools": [
+                "xelatex-latexmk-with-shell-escape"
+            ]
+        },
+        {
+            "name": "pdflatex-latexmk-with-shell-escape",
+            "tools": [
+                "pdflatex-latexmk-with-shell-escape"
+            ]
+        },
+        {
+            "name": "BibTeX",
+            "tools": [
+                "bibtex"
+            ]
+        },
+    ],
+    // 文件清理
+    "latex-workshop.latex.clean.fileTypes": [
+        "*.log",
+        "*.aux",
+        "*.bbl",
+        "*.blg",
+        "*.fdb_latexmk",
+        "*.fls",
+        "*.out",
+        "*.gz",
+        "*.lof",
+        "*.lot",
+        "*.thm",
+        "*.toc",
+        "*.xdv"
+    ],
+    "latex-workshop.latex.recipe.default": "lastUsed",
+    "latex-workshop.view.pdf.internal.synctex.keybinding": "double-click",
+    "latex-workshop.showContextMenu": true,
+    "latex-workshop.intellisense.package.enabled": true,
+    "[latex]": {
+        "editor.formatOnPaste": true,
+        "editor.suggestSelection": "recentlyUsedByPrefix"
+    },
+    "latex-workshop.latex.autoBuild.run": "onSave",
+    "explorer.confirmDelete": false,
+    "latex-workshop.latex.autoClean.run": "onBuilt",
+    "latex-workshop.latex.clean.method": "glob",
+    "editor.minimap.enabled": false,
+}  
