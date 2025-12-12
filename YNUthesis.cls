@@ -6,10 +6,7 @@
 %%
 %% YNUthesis.dtx  (with options: `class')
 %% 
-%% Copyright (C) 2023 by 
-%% Rui-Zhi Li <liruizhi0871@gmail.com> (Original Version Author)
-%% Xue Wang <wangxue2022@mail.ynu.edu.cn> (Template Author)
-%% Jishu Wang <cswangjishu@hotmail.com> (Template and Tutorial Author)
+%% Copyright (C) 2023 by Rui-Zhi Li <liruizhi0871@gmail.com>
 %% ---------------------------------------------------------------------
 %% 
 %%     This work may be distributed and/or modified under the
@@ -1746,6 +1743,29 @@
     \dim_set_eq:NN \LTpre  \c_zero_dim
     \dim_set_eq:NN \LTpost \c_zero_dim
   }
+
+\NewDocumentEnvironment { abbreviation } { O { l p { 7.5 cm } } }
+  {
+    \__YNU_abbreviation_begin:
+    \group_begin:
+      \__YNU_abbreviation_long_table_setup:
+      \longtable {#1}
+  }
+  {
+      \endlongtable
+    \group_end:
+  }
+\cs_new_protected:Npn \__YNU_abbreviation_begin:
+  {
+\__YNU_chapter:V \c__YNU_name_abbreviation_tl
+  }
+\cs_new_protected:Npn \__YNU_abbreviation_long_table_setup:
+  {
+    \tl_set:Nn \arraystretch { 1.3 }
+    \dim_set_eq:NN \LTpre  \c_zero_dim
+    \dim_set_eq:NN \LTpost \c_zero_dim
+  }
+
 \bool_new:N \l__YNU_bibtex_bool
 \tl_new:N \l__YNU_bib_style_tl
 \tl_new:N \l__YNU_bib_gb_style_tl
