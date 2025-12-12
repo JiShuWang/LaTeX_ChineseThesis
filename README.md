@@ -1,6 +1,11 @@
 # LaTeX_ChineseThesis
 一个用于国内研究生学位论文撰写的LaTeX模板及其基本使用教程。该模板最初是用于云南大学研究生学位论文的撰写，但国内的学位论文格式基本一致，因此也可根据自己的需求扩展到各个高校的研究生学位论文撰写。如有任何问题和建议，欢迎Issue。
 
+## 2025.12.12 更新
+改动文件：YNUthesis.cls、YNUthesis.def
+
+改动内容：添加缩写表，通过\begin{abbreviation}\end{abbreviation}即可使用，用法与\begin{table}\end{table}一致。
+
 使用LaTeX编写学位论文，不仅可以符合长期使用LaTeX编写学术论文的研究者的习惯，也可以同时避免使用Word撰写论文过程中经常面临的图表位置错乱、模板不一致、参考文献格式不统一等问题，从而提高论文撰写效率，并实现标准的论文格式。
 ## 1.论文编写环境配置
 在线工具：推荐Overleaf，支持在线、多人协作等功能，同时不用配置环境，但最近由于编译时长的缩短，大篇幅的学位论文很难通过编译。
@@ -18,10 +23,6 @@ main.tex：主文档，即论文撰写的主要文件。
 main.pdf：编译后的论文。
 
 其它文件均为配置文件，请勿随意改动或删除。
-
-## 2025.12.12 更新
-改动文件：YNUthesis.cls、YNUthesis.def
-改动内容：添加缩写表，通过\begin{abbreviation}\end{abbreviation}即可使用，用法与\begin{table}\end{table}一致。
 
 ## 3.注意事项
 由于默认的LaTeX环境使用latex编译器，而该编译器不支持中文论文的编译。为了方便编译，需要将默认（首选）的编译器为xelatex。同时由于LaTeX编译后会自动生成一些文件，还需要自动完成对这些文件的清理。此外，还有一些其它的配置项（如是否用浏览器打开编译后的pdf文件）需要根据需求自行配置，所以提供一个可用的配置模板（Template.json），直接将该模板复制，然后找到LaTeX Workshop中的settings.json文件（或者在settings中查找recipes并编辑该文件），将该模板粘贴即可。
