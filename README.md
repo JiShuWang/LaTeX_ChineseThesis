@@ -31,7 +31,8 @@ main.pdf：编译后的论文。
 
 ## 5.致谢
 感谢该模板原始版本的提供者Rui-Zhi Li（liruizhi0871@gmail.com）
-。在此基础上，Xue Wang（wangxue2022@mail.ynu.edu.cn；https://github.com/wang-x-1997）
+。在此基础上，Xue Wang（wangxue2022@mail.ynu.edu.cn；https://github.com/wang-x-1997
+）
 完成了第一版模板的编写。
 
 在此基础上，我进一步修改了模板，并将环境配置和可能遇到的主要问题进行排查解决，并编写了该教程。
