@@ -6,10 +6,7 @@
 %%
 %% YNUthesis.dtx  (with options: `definition')
 %% 
-%% Copyright (C) 2025 by 
-%% Rui-Zhi Li <liruizhi0871@gmail.com> (Original Version Author)
-%% Xue Wang <wangxue2022@mail.ynu.edu.cn> (Template Author)
-%% Jishu Wang <cswangjishu@hotmail.com> (Template and Tutorial Author)
+%% Copyright (C) 2023 by Rui-Zhi Li <liruizhi0871@gmail.com>
 %% ---------------------------------------------------------------------
 %% 
 %%     This work may be distributed and/or modified under the
@@ -102,7 +99,8 @@
     { keywords } { 关键字      } { Keywords:         },
     { clc      } { 分类号      } { CLC~ code:        },
     { jel      } { JEL 分类号  } { JEL~ code:        },
-    { notation } { 符号表      } { List~ of~ Symbols }
+    { notation } { 符号表      } { List~ of~ Symbols },
+    { abbreviation } { 缩写表      } { List~ of~ Abbreviations }
   }
   { \__YNU_define_name:nnn #1 }
 \clist_map_inline:nn
