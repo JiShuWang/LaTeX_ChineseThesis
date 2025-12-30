@@ -1,0 +1,38 @@
+% 1.添加json格式代码的显示（2025年12月30日）。
+
+步骤1：添加以下宏包的导入。
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{float}
+
+步骤2：在tex文件导言区添加以下代码。
+% 定义JSON语言样式
+\lstdefinelanguage{json}{
+  basicstyle=\ttfamily\footnotesize,
+  breaklines=true,
+  showstringspaces=false,
+  columns=fullflexible,
+  morestring=[b]", 
+  morestring=[d]',
+  morecomment=[l]{\#},
+  literate={_}{{\_}}1
+}
+
+% 定义样式
+\lstdefinestyle{jsonstyle}{
+  language=json,
+  backgroundcolor=\color{gray!10},
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+  stepnumber=1,
+  frame=single,
+  rulecolor=\color{black},
+  tabsize=2
+}
+
+步骤3：通过引用进行使用。
+\begin{lstlisting}[style=jsonstyle]
+{
+  json代码
+}
+\end{lstlisting}
